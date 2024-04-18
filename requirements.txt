@@ -6,3 +6,6 @@ requests==2.31.0
 transformers==4.39.3  
 langchain-community==0.0.31 
 huggingface_hub==0.22.2 
+torch==2.2.2
+torchaudio==2.2.2
+torchvision==0.17.2
