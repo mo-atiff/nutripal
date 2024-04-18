@@ -3,7 +3,7 @@ import streamlit as st
 from streamlit_lottie import st_lottie 
 import secrets
 from pymongo import MongoClient
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 import getpass
 import base64
@@ -26,7 +26,7 @@ from langchain_community.llms import HuggingFaceEndpoint
 from transformers import pipeline
 
 
-load_dotenv()
+# load_dotenv()
 
 
 st.set_page_config(
@@ -46,7 +46,7 @@ st.markdown(no_sidebar_style, unsafe_allow_html=True)
 
 st.title(' :red[NutriPal] - Your AI-Powered Nutrition Coach')
 
-mongo_key = os.getenv('mongokey')
+mongo_key = st.secrets['mongokey']
 
 
 @st.cache_resource
@@ -289,7 +289,7 @@ if 'logged' not in st.session_state:
 #     openai_key = st.text_input('API Key', type='password')
 #     if openai_key:
 #         st.session_state['apikey'] = openai_key
-hugapikey = os.getenv('huggingfaceapikey')
+hugapikey = st.secrets['huggingfaceapikey']
 st.session_state['apikey'] = hugapikey
 
 
