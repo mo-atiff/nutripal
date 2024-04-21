@@ -49,7 +49,7 @@ def get_recepie(data):
                 \n Additionally feel free to add or remove any ingredient if it alligns with the instructions, but kindly specify a reason before you add or remove ingredients.
                 \n Create a detailed recipe using all the ingredients given and strictly follow the instructions given while creating a recipe."""
 
-    repo_id = "mistralai/Mistral-7B-Instruct-v0.2"
+    repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
     prompt = PromptTemplate(input_variables=["ing_nd_ins"], template=template)
     final_prompt = prompt.format(ing_nd_ins = data)
