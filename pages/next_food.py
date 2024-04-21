@@ -56,7 +56,7 @@ def ask_llm(data):
 
     final_prompt = prompt.format(quest = data)
 
-    repo_id = "mistralai/Mistral-7B-Instruct-v0.2"
+    repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
     llm = HuggingFaceEndpoint(
         repo_id=repo_id, max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
