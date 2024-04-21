@@ -55,7 +55,7 @@ def get_recepie(data):
     final_prompt = prompt.format(ing_nd_ins = data)
 
     llm = HuggingFaceEndpoint(
-        repo_id=repo_id, max_length=2046, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
+        repo_id=repo_id, max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
     )
 
     return llm(final_prompt)
@@ -130,7 +130,7 @@ def nut_ask_llm(data):
     repo_id2 = "mistralai/Mistral-7B-Instruct-v0.2"
 
     llm2 = HuggingFaceEndpoint(
-        repo_id=repo_id2, max_length=2046, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
+        repo_id=repo_id2, max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
     )
 
     return llm2(final_prompt2)
