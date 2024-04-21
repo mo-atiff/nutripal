@@ -59,7 +59,7 @@ def ask_llm(data):
     repo_id = "mistralai/Mistral-7B-Instruct-v0.2"
 
     llm = HuggingFaceEndpoint(
-        repo_id=repo_id, max_length=2046, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
+        repo_id=repo_id, max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
     )
     # llm_chain = LLMChain(prompt=prompt, llm=llm)
 
