@@ -204,7 +204,7 @@ def nutripalpage():
             )
 
             llm_mistral = HuggingFaceEndpoint(
-                repo_id="mistralai/Mistral-7B-Instruct-v0.2", max_length=2046, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey'] 
+                repo_id="mistralai/Mistral-7B-Instruct-v0.2", max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey'] 
             )
 
             qa = RetrievalQA.from_chain_type(
