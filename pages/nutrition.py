@@ -127,7 +127,7 @@ def nut_ask_llm(data):
 
     final_prompt2 = prompt2.format(nutritional=data)
 
-    repo_id2 = "mistralai/Mistral-7B-Instruct-v0.2"
+    repo_id2 = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
     llm2 = HuggingFaceEndpoint(
         repo_id=repo_id2, max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey']
