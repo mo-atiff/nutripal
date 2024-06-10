@@ -1,5 +1,7 @@
 # NutriPal
 
+[Link to my app](https://nutripal.streamlit.app/)
+
 ## Introduction
 NutriPal is an AI-powered nutrition coach that helps users manage their dietary habits by generating customized recipes, predicting future meals, and providing nutritional information. It leverages the power of AI models such as those from OpenAI and Hugging Face to offer personalized recommendations based on user input and history.
 
