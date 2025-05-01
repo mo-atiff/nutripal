@@ -25,7 +25,7 @@ To install and run NutriPal locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/mo-atiff/story-generator.git
+    git clone https://github.com/mo-atiff/nutripal.git
     cd story-generator
     ```
 
