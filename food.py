@@ -290,6 +290,7 @@ if 'logged' not in st.session_state:
 #     if openai_key:
 #         st.session_state['apikey'] = openai_key
 hugapikey = st.secrets['huggingfaceapikey']
+st.write(hugapikey)
 st.session_state['apikey'] = hugapikey
 
 
