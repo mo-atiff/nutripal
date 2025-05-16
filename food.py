@@ -182,6 +182,7 @@ def nutripalpage():
                 collection.update_one(filter_, update)
 
             existing_history = collection.find_one({"Username":st.session_state['logged'].split('isloggedin')[0]})
+            st.write(existing_history)
 
             def get_text_chunks_langchain(text):
                 text_splitter = CharacterTextSplitter(chunk_size=50, chunk_overlap=20)
@@ -290,7 +291,7 @@ if 'logged' not in st.session_state:
 #     if openai_key:
 #         st.session_state['apikey'] = openai_key
 hugapikey = st.secrets['huggingfaceapikey']
-st.write(hugapikey)
+# st.write(hugapikey)
 st.session_state['apikey'] = hugapikey
 
 
