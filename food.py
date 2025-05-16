@@ -199,6 +199,9 @@ def nutripalpage():
             embeddings = HuggingFaceInferenceAPIEmbeddings(api_key=st.session_state['apikey'] , model_name="sentence-transformers/all-MiniLM-l6-v2")
             st.write("emebeddings models created")
 
+            st.write(docs)
+            st.write(embeddings)
+
             qdrant = Qdrant.from_documents(
                 docs,
                 embeddings,
