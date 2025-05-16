@@ -182,7 +182,7 @@ def nutripalpage():
                 collection.update_one(filter_, update)
 
             existing_history = collection.find_one({"Username":st.session_state['logged'].split('isloggedin')[0]})
-            st.write(existing_history)
+            # st.write(existing_history)
 
             def get_text_chunks_langchain(text):
                 text_splitter = CharacterTextSplitter(chunk_size=50, chunk_overlap=20)
@@ -192,10 +192,12 @@ def nutripalpage():
 
             docs = get_text_chunks_langchain(existing_history["history"])
 
+            st.write("docs chunking done")
+
             # embeddings = HuggingFaceEmbeddings()
             # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="")
             embeddings = HuggingFaceInferenceAPIEmbeddings(api_key=st.session_state['apikey'] , model_name="sentence-transformers/all-MiniLM-l6-v2")
-
+            st.write("emebeddings models created")
 
             qdrant = Qdrant.from_documents(
                 docs,
@@ -204,15 +206,21 @@ def nutripalpage():
                 collection_name="my_documents",
             )
 
+            st.write("qdrant created")
+
             llm_mistral = HuggingFaceEndpoint(
                 repo_id="mistralai/Mixtral-8x7B-Instruct-v0.1", max_length=1024, temperature=0.5, huggingfacehub_api_token=st.session_state['apikey'] 
             )
+
+            st.write("llm created")
 
             qa = RetrievalQA.from_chain_type(
                 llm=llm_mistral,
                 chain_type="stuff",
                 retriever=qdrant.as_retriever()
             )
+
+            st.write("qa created")
 
             # st.text('Preparing dish...')
 
@@ -264,7 +272,9 @@ def nutripalpage():
                 st.info('Generated dish will be Eco-Friendly')
 
             # st.text(prompt)
+            st.write("magic")
             prepared_dish = qa.run(prompt)
+            st.write("error is here")
             # st.text(prompt)
             st.write('')
             st.write('')
