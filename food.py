@@ -196,8 +196,8 @@ def nutripalpage():
 
             # embeddings = HuggingFaceEmbeddings()
             # embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key="")
-            # embeddings = HuggingFaceInferenceAPIEmbeddings(api_key=st.session_state['apikey'] , model_name="sentence-transformers/all-MiniLM-l6-v2")
-            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+            embeddings = HuggingFaceInferenceAPIEmbeddings(api_key=st.session_state['apikey'] , model_name="sentence-transformers/all-MiniLM-l6-v2")
+            # embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
             st.write("emebeddings models created")
 
             st.write(docs)
