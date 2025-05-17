@@ -20,6 +20,7 @@ from langchain_text_splitters import CharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.schema.document import Document
 from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_community.llms import HuggingFaceEndpoint
 
 
